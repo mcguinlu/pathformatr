@@ -1,3 +1,21 @@
+#' Correctly format path to match here::here() guidelines
+#'
+#' @return Updated path as recommended by here::here(), split into individual
+#'   quoted and comma-separated segments.
+#' @export
+here_clean_path <- function() {
+
+  # Get information
+  info <- get_info(context = rstudioapi::getSourceEditorContext())
+
+  # Get code
+  path_text <- split_path(info[["path_text"]])
+
+  # Update highlighted code
+  rstudioapi::modifyRange(info[["range"]], path_text, info[["id"]])
+}
+
+
 #' Get information on the highlighted path from the editor
 #'
 #' @param context Context of the text
@@ -16,24 +34,6 @@ get_info <- function(context) {
   info <- list(range = range, path_text = path_text, id = id)
 
   return(info)
-}
-
-
-#' Correctly format path to match here::here() guidelines
-#'
-#' @return Updated path as recommended by here::here(), split into individual
-#'   quoted and comma-separated segments.
-#' @export
-here_clean_path <- function() {
-
-  # Get information
-  info <- get_info(context = rstudioapi::getSourceEditorContext())
-
-  # Get code
-  path_text <- split_path(info[["path_text"]])
-
-  # Update highlighted code
-  rstudioapi::modifyRange(info[["range"]], path_text, info[["id"]])
 }
 
 #' Split path by slashes and quote and comma-separate result.
