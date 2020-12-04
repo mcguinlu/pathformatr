@@ -32,7 +32,7 @@ here::here()”.
 
 Alternatively you can [bind the functionality to a keyboard
 shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts)
-- I personally like mapping it to `CRTL+/`.
+(I personally like mapping it to `CRTL+/`).
 
 ## Installation
 
@@ -47,4 +47,5 @@ library(herehelper)
 
 ## To Do
 
-Make a video demonstrating the functionality.
+  - Better testing (not exactly sure how\!).
+  - Make a video demonstrating the functionality.
