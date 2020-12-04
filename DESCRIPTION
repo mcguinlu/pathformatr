@@ -1,11 +1,17 @@
 Package: herehelper
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Format traditional file paths for use with here::here()
 Version: 0.1.0.900
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: c( 
+    person("Luke", "McGuinness",
+           role = c("aut", "cre"),
+           email = "luke.mcguinness@bristol.ac.uk"))
+Description: This function formats a file path highlighted in the source pane
+    to work with here::here() by separating the string into its component
+    parts, and then quoting and comma-separating these elements. This 
+    functionality is  useful as it allows for users to autocomplete paths 
+    using the RStudio auto-complete functionality, and then rapdily reformat the
+    resulting path for use with the here package. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,3 +23,5 @@ Suggests:
     testthat,
     spelling
 Language: en-US
+URL: https://github.com/mcguinlu/herehelper
+BugReports: https://github.com/mcguinlu/herehelper/issues

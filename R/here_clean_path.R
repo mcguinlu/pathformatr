@@ -1,4 +1,11 @@
-#' Correctly format path to match here::here() guidelines
+#' Correctly format the highlighted path to match here::here() guidelines
+#'
+#' @description This function formats a file path highlighted in the source pane
+#'   to work with here::here() by separating the string into its component
+#'   parts and quoting and comma-separating these elements. For best use, we
+#'   recommend using this functionality via the associated AddIn, or by binding
+#'   the AddIn to a keyboard shortcut, rather than calling the function
+#'   interactively from the console.
 #'
 #' @return Updated path as recommended by here::here(), split into individual
 #'   quoted and comma-separated segments.
@@ -15,14 +22,11 @@ here_clean_path <- function() {
   rstudioapi::modifyRange(info[["range"]], path_text, info[["id"]])
 }
 
-
 #' Get information on the highlighted path from the editor
 #'
 #' @param context Context of the text
 #'
 #' @return Information about the highlighted text
-#' @export
-
 get_info <- function(context) {
 
   id <- context[["id"]]
@@ -41,7 +45,6 @@ get_info <- function(context) {
 #' @param text File path to reformat
 #'
 #' @return
-#' @export
 split_path <- function(text){
 
   # Replace forward-slash
