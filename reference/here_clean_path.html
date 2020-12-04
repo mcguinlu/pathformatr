@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Correctly format path to match here::here() guidelines — here_clean_path • herehelper</title>
+<title>Correctly format the highlighted path to match here::here() guidelines — here_clean_path • herehelper</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,13 @@
 
 
 
-<meta property="og:title" content="Correctly format path to match here::here() guidelines — here_clean_path" />
-<meta property="og:description" content="Correctly format path to match here::here() guidelines" />
+<meta property="og:title" content="Correctly format the highlighted path to match here::here() guidelines — here_clean_path" />
+<meta property="og:description" content="This function formats a file path highlighted in the source pane
+  to work with here::here() by separating the string into its component
+  parts and quoting and comma-separating these elements. For best use, we
+  recommend using this functionality via the associated AddIn, or by binding
+  the AddIn to a keyboard shortcut, rather than calling the function
+  interactively from the console." />
 
 
 
@@ -89,7 +94,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/mcguinlu/herehelper/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -103,13 +113,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Correctly format path to match here::here() guidelines</h1>
-    
+    <h1>Correctly format the highlighted path to match here::here() guidelines</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mcguinlu/herehelper/blob/master/R/here_clean_path.R'><code>R/here_clean_path.R</code></a></small>
     <div class="hidden name"><code>here_clean_path.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Correctly format path to match here::here() guidelines</p>
+    <p>This function formats a file path highlighted in the source pane
+  to work with here::here() by separating the string into its component
+  parts and quoting and comma-separating these elements. For best use, we
+  recommend using this functionality via the associated AddIn, or by binding
+  the AddIn to a keyboard shortcut, rather than calling the function
+  interactively from the console.</p>
     </div>
 
     <pre class="usage"><span class='fu'>here_clean_path</span><span class='op'>(</span><span class='op'>)</span></pre>
@@ -117,7 +132,8 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Updates the highlighted path as recommended by here::here()</p>
+    <p>Updated path as recommended by here::here(), split into individual
+  quoted and comma-separated segments.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -130,7 +146,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by The package maintainer.</p>
+  <p>Developed by Luke McGuinness.</p>
 </div>
 
 <div class="pkgdown">
