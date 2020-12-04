@@ -17,6 +17,8 @@ reformat your code to match here::here() guidelines.
 
 ``` r
 here::here("data/2020/06/01/data.csv")
+# or
+here::here("data\2020\06\01\data.csv")
 
 # becomes
 

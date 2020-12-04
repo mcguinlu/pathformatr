@@ -24,6 +24,8 @@ The purpose of `herehelper` is singular and simple - to allow you to use the RSt
 
 ``` {r, eval = FALSE}
 here::here("data/2020/06/01/data.csv")
+# or
+here::here("data\2020\06\01\data.csv")
 
 # becomes
 
