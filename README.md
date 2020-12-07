@@ -47,5 +47,5 @@ library(herehelper)
 
 ## To Do
 
-  - Better testing (not exactly sure how\!).
   - Make a video demonstrating the functionality.
+  - Add new function to format all here::here() calls in a document
