@@ -53,5 +53,8 @@ split_path <- function(text){
   # Replace back-slash
   text <- stringr::str_replace_all(text,"\\\\","\",\"")
 
+  text <- stringr::str_replace(text,",\"\"","")
+  text <- stringr::str_replace(text,"\"\",","")
+
   return(text)
 }

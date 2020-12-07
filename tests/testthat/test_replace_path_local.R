@@ -9,7 +9,7 @@ context("Check path replacement - full (local only)")
 # here::here("inst","rstudio","test.csv")
 #  -- Scratch Space -- #
 
-test_that("various APIs for interacting with an RStudio document work", {
+test_that("Add-in works", {
   # Skip unless interactive
   skip_if(rstudioapi::isAvailable("0.99.796")==FALSE,
               message = "RStudio available is not available.")
