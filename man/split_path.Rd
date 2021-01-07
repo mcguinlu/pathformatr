@@ -4,7 +4,7 @@
 \alias{split_path}
 \title{Split path by slashes and quote and comma-separate result.}
 \usage{
-split_path(text)
+split_path(text, fns = c("here", "file.path"))
 }
 \arguments{
 \item{text}{File path to reformat}

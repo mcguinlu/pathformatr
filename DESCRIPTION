@@ -18,7 +18,8 @@ LazyData: true
 RoxygenNote: 7.1.1
 Imports: 
     rstudioapi (>= 0.11),
-    stringr (>= 1.4)
+    stringr (>= 1.4),
+    magrittr
 Suggests: 
     testthat,
     spelling

@@ -7,9 +7,14 @@ context("Check path replacement - full (local only)")
 # here::here("inst/rstudio/test.csv")
 # here::here("inst\rstudio\test.csv")
 # here::here("inst","rstudio","test.csv")
+# file.path("inst/rstudio/test.csv")
+# file.path("inst\rstudio\test.csv")
+# file.path("inst","rstudio","test.csv")
 #  -- Scratch Space -- #
 
-test_that("Add-in works", {
+# test("inst\rstudio\test.csv")
+
+test_that("various APIs for interacting with an RStudio document work", {
   # Skip unless interactive
   skip_if(rstudioapi::isAvailable("0.99.796")==FALSE,
               message = "RStudio available is not available.")
@@ -19,17 +24,19 @@ test_that("Add-in works", {
   path <- context$path
   before <- readLines(path)
 
-  # Check forward slashes can be handled
-  ranges_forward <- c(7,1,7,Inf)
+# CHECK HERE cleaning -----
 
-  rstudioapi::setSelectionRanges(ranges_forward)
+  # Check forward slashes can be handled
+  ranges_forward_here <- c(7,1,7,Inf)
+
+  rstudioapi::setSelectionRanges(ranges_forward_here)
 
   here_clean_path()
 
   # Check backward slashes can be handled
-  ranges_backward <- c(8,1,8,Inf)
+  ranges_backward_here <- c(8,1,8,Inf)
 
-  rstudioapi::setSelectionRanges(ranges_backward)
+  rstudioapi::setSelectionRanges(ranges_backward_here)
 
   here_clean_path()
 
@@ -41,10 +48,65 @@ test_that("Add-in works", {
   expect_equal(before[9], after[8])
 
   # Reset the test paths in the scratch space
-  rstudioapi::insertText(ranges_forward,
-                         "# here::here(\"inst/rstudio/test.csv\")")
-  rstudioapi::insertText(ranges_backward,
-                         "# here::here(\"inst\\rstudio\\test.csv\")")
+  rstudioapi::insertText(ranges_forward_here,
+                         paste0("# here::here","(\"inst/rstudio/test.csv\")"))
+  rstudioapi::insertText(ranges_backward_here,
+                         paste0("# here::here","(\"inst\\rstudio\\test.csv\")"))
+
+
+# CHECK FILE.PATH cleaning -----
+
+  # Check forward slashes can be handled
+  ranges_forward_fp <- c(10,1,10,Inf)
+
+  rstudioapi::setSelectionRanges(ranges_forward_fp)
+
+  here_clean_path()
+
+  # Check backward slashes can be handled
+  ranges_backward_fp <- c(11,1,11,Inf)
+
+  rstudioapi::setSelectionRanges(ranges_backward_fp)
+
+  here_clean_path()
+
+  ctx <- rstudioapi::getActiveDocumentContext()
+  after <- ctx$contents
+
+  # Check reformatted paths agree with sample path (before[9])
+  expect_equal(before[12], after[10])
+  expect_equal(before[12], after[11])
+
+  # Reset the test paths in the scratch space
+  rstudioapi::insertText(ranges_forward_fp,
+                         paste0("# file.path","(\"inst/rstudio/test.csv\")"))
+  rstudioapi::insertText(ranges_backward_fp,
+                         paste0("# file.path","(\"inst\\rstudio\\test.csv\")"))
+
+  #### - here_clean_all()
+
+  # Clean all calls in the document
+  here_clean_all()
+
+  ctx <- rstudioapi::getActiveDocumentContext()
+  after <- ctx$contents
+
+  # Check reformatted paths agree with sample path (before[9])
+  expect_equal(before[9], after[7])
+  expect_equal(before[9], after[8])
+  expect_equal(before[12], after[10])
+  expect_equal(before[12], after[11])
+
+  # Reset the test paths in the scratch space
+  rstudioapi::insertText(ranges_forward_here,
+                         paste0("# here::here","(\"inst/rstudio/test.csv\")"))
+  rstudioapi::insertText(ranges_backward_here,
+                         paste0("# here::here","(\"inst\\rstudio\\test.csv\")"))
+  rstudioapi::insertText(ranges_forward_fp,
+                         paste0("# file.path","(\"inst/rstudio/test.csv\")"))
+  rstudioapi::insertText(ranges_backward_fp,
+                         paste0("# file.path","(\"inst\\rstudio\\test.csv\")"))
+
 
   # Confirm length of document is the same to make sure no new lines were
   # accidentally added

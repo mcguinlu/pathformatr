@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/mcguinlu/herehelper/workflows/R-CMD-check/badge.svg)](https://github.com/mcguinlu/herehelper/actions)
 <!-- badges: end -->
 
-The purpose of `herehelper` is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your code to match here::here() guidelines.
+The purpose of `herehelper` is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your file path to use comma seperated elements:
 
 ``` {r, eval = FALSE}
 here::here("data/2020/06/01/data.csv")
@@ -32,21 +32,19 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
-This functionality is designed to work via an RStudio addin - simply highlight your file path, browse to the `herehelper` section in the RStudio Addins drop-down menu, and select "Format path for use with here::here()".
+This functionality is available via the `here_clean_path()` function, but is designed to work best via an RStudio addin - simply highlight your file path, browse to the `herehelper` section in the RStudio Addins drop-down menu, and select "Format path for use with here::here()".
 
 Alternatively you can [bind the functionality to a keyboard shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts) (I personally like mapping it to `CRTL+/`).
 
-## Installation
+### `here_clean_all()`
 
-You can install the development version from [GitHub](https://github.com/) with:
+A second helper function reformats. By default, it targets `here()` and `file.path()` calls, though users can specify that only one of these should be targetted, or add additional targets, using the `fns` argument.
 
-``` {r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("mcguinlu/herehelper")
-library(herehelper)
-```
+
+## Motivation
+
+My motivation for this project was primarily to have a reason to play around with the RStudio interface (via the `rstudioapi` package) and to get to grips with `regex` syntax.
 
 ## To Do
 
 * Make a video demonstrating the functionality.
-* Add new function to format all here::here() calls in a document

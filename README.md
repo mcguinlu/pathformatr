@@ -25,6 +25,16 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
+The function will now also clean `file.path()` calls, so :
+
+``` r
+file.path("data/2020/06/01/data.csv")
+
+# becomes
+
+file.path("data","2020","06","01","data.csv")
+```
+
 This functionality is designed to work via an RStudio addin - simply
 highlight your file path, browse to the `herehelper` section in the
 RStudio Addins drop-down menu, and select “Format path for use with
@@ -44,6 +54,8 @@ You can install the development version from
 devtools::install_github("mcguinlu/herehelper")
 library(herehelper)
 ```
+
+## Motivation
 
 ## To Do
 

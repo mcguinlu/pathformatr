@@ -4,7 +4,12 @@
 \alias{here_clean_path}
 \title{Correctly format the highlighted path to match here::here() guidelines}
 \usage{
-here_clean_path()
+here_clean_path(fns = c("here", "file.path"))
+}
+\arguments{
+\item{fns}{Defines the functions to target for cleaning. Default is to clean
+the file paths of both here() and file.path(), but one or the other can be
+specified.}
 }
 \value{
 Updated path as recommended by here::here(), split into individual
@@ -12,9 +17,9 @@ Updated path as recommended by here::here(), split into individual
 }
 \description{
 This function formats a file path highlighted in the source pane
-  to work with here::here() by separating the string into its component
-  parts and quoting and comma-separating these elements. For best use, we
-  recommend using this functionality via the associated AddIn, or by binding
-  the AddIn to a keyboard shortcut, rather than calling the function
-  interactively from the console.
+  to work with here::here() by separating the string into its component parts
+  and quoting and comma-separating these elements. For best use, we recommend
+  using this functionality via the associated AddIn, or by binding the AddIn
+  to a keyboard shortcut, rather than calling the function interactively from
+  the console.
 }
