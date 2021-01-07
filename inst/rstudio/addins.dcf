@@ -1,4 +1,4 @@
-Name: Format path for use with here::here()
-Description: Splits path into individual quoted and comma-separated segments.
-Binding: here_clean_path
+Name: Split path into individual quoted and comma-separated segments.
+Description: Splits file paths in here() and file.path() calls into individual quoted and comma-separated segments, allowing users to autocomplete their paths using the RStudio file completion functionality and then quickly reformat to be serperator-agnostic.
+Binding: format_path
 Interactive: false

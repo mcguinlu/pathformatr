@@ -1,7 +1,6 @@
 context("Check path replacement - full (local only)")
 
-## The tests contained in this file 'pass' if, after sourcing
-## in RStudio, the contents don't change. :) Can only be run interactively!
+## Can only be run interactively!
 
 #  -- Scratch Space -- #
 # here::here("inst/rstudio/test.csv")
@@ -31,14 +30,14 @@ test_that("various APIs for interacting with an RStudio document work", {
 
   rstudioapi::setSelectionRanges(ranges_forward_here)
 
-  here_clean_path()
+  format_path()
 
   # Check backward slashes can be handled
   ranges_backward_here <- c(8,1,8,Inf)
 
   rstudioapi::setSelectionRanges(ranges_backward_here)
 
-  here_clean_path()
+  format_path()
 
   ctx <- rstudioapi::getActiveDocumentContext()
   after <- ctx$contents
@@ -61,14 +60,14 @@ test_that("various APIs for interacting with an RStudio document work", {
 
   rstudioapi::setSelectionRanges(ranges_forward_fp)
 
-  here_clean_path()
+  format_path()
 
   # Check backward slashes can be handled
   ranges_backward_fp <- c(11,1,11,Inf)
 
   rstudioapi::setSelectionRanges(ranges_backward_fp)
 
-  here_clean_path()
+  format_path()
 
   ctx <- rstudioapi::getActiveDocumentContext()
   after <- ctx$contents
@@ -86,7 +85,7 @@ test_that("various APIs for interacting with an RStudio document work", {
   #### - here_clean_all()
 
   # Clean all calls in the document
-  here_clean_all()
+  format_all_paths()
 
   ctx <- rstudioapi::getActiveDocumentContext()
   after <- ctx$contents
