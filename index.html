@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Format traditional file paths for use with here::here() • herehelper</title>
+<title>Format traditional file paths for use with here::here() • pathformatr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -35,7 +35,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">herehelper</a>
+        <a class="navbar-link" href="index.html">pathformatr</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.900</span>
       </span>
     </div>
@@ -57,7 +57,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/mcguinlu/herehelper/">
+  <a href="https://github.com/mcguinlu/pathformatr/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -74,12 +74,12 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="herehelper" class="section level1">
+<div id="pathformatr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#herehelper" class="anchor"></a>herehelper</h1></div>
+<a href="#pathformatr" class="anchor"></a>pathformatr</h1></div>
 <!-- badges: start -->
 
-<p>The purpose of <code>herehelper</code> is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your code to match here::here() guidelines.</p>
+<p>The purpose of <code>pathformatr</code> is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your code to match here::here() guidelines.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data/2020/06/01/data.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co"># or</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data\2020</span><span class="ch">\06\01</span><span class="st">\data.csv"</span>)</span>
@@ -94,7 +94,7 @@
 <span class="co"># becomes</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"data"</span>,<span class="st">"2020"</span>,<span class="st">"06"</span>,<span class="st">"01"</span>,<span class="st">"data.csv"</span><span class="op">)</span></code></pre></div>
-<p>This functionality is designed to work via an RStudio addin - simply highlight your file path, browse to the <code>herehelper</code> section in the RStudio Addins drop-down menu, and select “Format path for use with here::here()”.</p>
+<p>This functionality is designed to work via an RStudio addin - simply highlight your file path, browse to the <code>pathformatr</code> section in the RStudio Addins drop-down menu, and select “Format path for use with here::here()”.</p>
 <p>Alternatively you can <a href="https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts">bind the functionality to a keyboard shortcut</a> (I personally like mapping it to <code>CRTL+/</code>).</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -102,8 +102,8 @@
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mcguinlu/herehelper"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mcguinlu/herehelper">herehelper</a></span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mcguinlu/pathformatr"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mcguinlu/pathformatr">pathformatr</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="motivation" class="section level2">
 <h2 class="hasAnchor">
@@ -124,9 +124,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/mcguinlu/herehelper/">https://​github.com/​mcguinlu/​herehelper/​</a>
+<li>Browse source code at <br><a href="https://github.com/mcguinlu/pathformatr/">https://​github.com/​mcguinlu/​pathformatr/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/mcguinlu/herehelper/issues">https://​github.com/​mcguinlu/​herehelper/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/mcguinlu/pathformatr/issues">https://​github.com/​mcguinlu/​pathformatr/​issues</a>
 </li>
 </ul>
 </div>
@@ -148,7 +148,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://github.com/mcguinlu/herehelper/actions"><img src="https://github.com/mcguinlu/herehelper/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://github.com/mcguinlu/pathformatr/actions"><img src="https://github.com/mcguinlu/pathformatr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>
 </div>
