@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • herehelper</title>
+<title>Clean paths in all here::here() and file.path() in the active document — here_clean_all • herehelper</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Clean paths in all here::here() and file.path() in the active document — here_clean_all" />
+<meta property="og:description" content="Clean paths in all here::here() and file.path() in the active document" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -110,28 +111,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/mcguinlu/herehelper/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Clean paths in all here::here() and file.path() in the active document</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mcguinlu/herehelper/blob/master/R/here_clean_path.R'><code>R/here_clean_path.R</code></a></small>
+    <div class="hidden name"><code>here_clean_all.Rd</code></div>
     </div>
 
-    <div id="herehelper-010900" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0.900">
-<a href="#herehelper-010900" class="anchor"></a>herehelper 0.1.0.900</h1>
-<ul>
-<li><p>Support for cleaning <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls was added to <code><a href="../reference/here_clean_path.html">here_clean_path()</a></code>. The function calls to be targeted for cleaning can be controlled using the <code>fns</code> argument.</p></li>
-<li><p>A new function, <code><a href="../reference/here_clean_all.html">here_clean_all()</a></code> was added to clean all <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls in the active document, rather than those highlighted. The function provides a print out of the number of each call it has found and cleaned.</p></li>
-<li><p>Initial working version of the package.</p></li>
-<li><p>Added a <code>NEWS.md</code> file to track changes to the package.</p></li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Clean paths in all here::here() and file.path() in the active document</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>here_clean_all</span><span class='op'>(</span>fns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"here"</span>, <span class='st'>"file.path"</span><span class='op'>)</span>, message <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>fns</th>
+      <td><p>Function to</p></td>
+    </tr>
+    <tr>
+      <th>message</th>
+      <td><p>Logical, specifying whether or not to print information about
+the cleaning process (file being cleaned and number of here() and
+file.path() calls)</p></td>
+    </tr>
+    </table>
+
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

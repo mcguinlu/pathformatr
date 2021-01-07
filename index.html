@@ -44,7 +44,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -58,7 +58,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/mcguinlu/herehelper/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -87,16 +87,27 @@
 <span id="cb1-5"><a href="#cb1-5"></a><span class="co"># becomes</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data"</span>,<span class="st">"2020"</span>,<span class="st">"06"</span>,<span class="st">"01"</span>,<span class="st">"data.csv"</span>)</span></code></pre></div>
+<p>The function will now also clean <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls, so :</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"data/2020/06/01/data.csv"</span><span class="op">)</span>
+
+<span class="co"># becomes</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"data"</span>,<span class="st">"2020"</span>,<span class="st">"06"</span>,<span class="st">"01"</span>,<span class="st">"data.csv"</span><span class="op">)</span></code></pre></div>
 <p>This functionality is designed to work via an RStudio addin - simply highlight your file path, browse to the <code>herehelper</code> section in the RStudio Addins drop-down menu, and select “Format path for use with here::here()”.</p>
 <p>Alternatively you can <a href="https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts">bind the functionality to a keyboard shortcut</a> (I personally like mapping it to <code>CRTL+/</code>).</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mcguinlu/herehelper"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mcguinlu/herehelper">herehelper</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="motivation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#motivation" class="anchor"></a>Motivation</h2>
 </div>
 <div id="to-do" class="section level2">
 <h2 class="hasAnchor">
