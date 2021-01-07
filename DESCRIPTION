@@ -1,4 +1,4 @@
-Package: herehelper
+Package: pathformatr
 Type: Package
 Title: Format traditional file paths for use with here::here()
 Version: 0.1.0.900
@@ -24,5 +24,5 @@ Suggests:
     testthat,
     spelling
 Language: en-US
-URL: https://github.com/mcguinlu/herehelper
-BugReports: https://github.com/mcguinlu/herehelper/issues
+URL: https://github.com/mcguinlu/pathformatr
+BugReports: https://github.com/mcguinlu/pathformatr/issues

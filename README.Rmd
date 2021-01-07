@@ -13,14 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# herehelper
+# pathformatr
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R build status](https://github.com/mcguinlu/herehelper/workflows/R-CMD-check/badge.svg)](https://github.com/mcguinlu/herehelper/actions)
+[![R build status](https://github.com/mcguinlu/pathformatr/workflows/R-CMD-check/badge.svg)](https://github.com/mcguinlu/pathformatr/actions)
 <!-- badges: end -->
 
-The purpose of `herehelper` is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your file path to use comma seperated elements:
+The purpose of `pathformatr` is singular and simple - to allow you to use the RStudio file path auto-complete functionality and then quickly reformat your file path to use comma seperated elements:
 
 ``` {r, eval = FALSE}
 here::here("data/2020/06/01/data.csv")
@@ -32,7 +32,7 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
-This functionality is available via the `here_clean_path()` function, but is designed to work best via an RStudio addin - simply highlight your file path, browse to the `herehelper` section in the RStudio Addins drop-down menu, and select "Format path for use with here::here()".
+This functionality is available via the `here_clean_path()` function, but is designed to work best via an RStudio addin - simply highlight your file path, browse to the `pathformatr` section in the RStudio Addins drop-down menu, and select "Format path for use with here::here()".
 
 Alternatively you can [bind the functionality to a keyboard shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts) (I personally like mapping it to `CRTL+/`).
 

@@ -1,4 +1,4 @@
 library(testthat)
-library(herehelper)
+library(pathformatr)
 
-test_check("herehelper")
+test_check("pathformatr")
