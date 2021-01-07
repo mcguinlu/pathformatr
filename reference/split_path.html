@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Split path by slashes and quote and comma-separate result. — split_path • pathformatr</title>
+<title>Find and format paths — split_path • pathformatr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Split path by slashes and quote and comma-separate result. — split_path" />
-<meta property="og:description" content="Split path by slashes and quote and comma-separate result." />
+<meta property="og:title" content="Find and format paths — split_path" />
+<meta property="og:description" content="Find and extract paths, split them by slashes, quote and
+comma-separate the result, and reinsert into text." />
 
 
 
@@ -111,13 +112,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Split path by slashes and quote and comma-separate result.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mcguinlu/pathformatr/blob/master/R/here_clean_path.R'><code>R/here_clean_path.R</code></a></small>
+    <h1>Find and format paths</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mcguinlu/pathformatr/blob/master/R/format_path.R'><code>R/format_path.R</code></a></small>
     <div class="hidden name"><code>split_path.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Split path by slashes and quote and comma-separate result.</p>
+    <p>Find and extract paths, split them by slashes, quote and
+comma-separate the result, and reinsert into text.</p>
     </div>
 
     <pre class="usage"><span class='fu'>split_path</span><span class='op'>(</span><span class='va'>text</span>, fns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"here"</span>, <span class='st'>"file.path"</span><span class='op'>)</span><span class='op'>)</span></pre>
@@ -129,12 +131,12 @@
       <th>text</th>
       <td><p>File path to reformat</p></td>
     </tr>
+    <tr>
+      <th>fns</th>
+      <td><p>Target function calls to clean. Defaults are "here" and
+"file.path"</p></td>
+    </tr>
     </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    
-
 
 
   </div>

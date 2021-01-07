@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • pathformatr</title>
+<title>Format the highlighted file path to use individual quoted and comma-separated
+elements — format_path • pathformatr</title>
 
 
 <!-- jquery -->
@@ -39,7 +40,14 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Format the highlighted file path to use individual quoted and comma-separated
+elements — format_path" />
+<meta property="og:description" content="This function formats a file path highlighted in the source pane
+  to work with here::here() or file.path() by separating the string into its
+  component parts and quoting and comma-separating these elements. For best
+  use, we recommend using this functionality via the associated AddIn, or by
+  binding the AddIn to a keyboard shortcut, rather than calling the function
+  interactively from the console." />
 
 
 
@@ -58,7 +66,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,50 +116,42 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Format the highlighted file path to use individual quoted and comma-separated
+elements</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mcguinlu/pathformatr/blob/master/R/format_path.R'><code>R/format_path.R</code></a></small>
+    <div class="hidden name"><code>format_path.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function formats a file path highlighted in the source pane
+  to work with here::here() or file.path() by separating the string into its
+  component parts and quoting and comma-separating these elements. For best
+  use, we recommend using this functionality via the associated AddIn, or by
+  binding the AddIn to a keyboard shortcut, rather than calling the function
+  interactively from the console.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>format_path</span><span class='op'>(</span>fns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"here"</span>, <span class='st'>"file.path"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="format_all_paths.html">format_all_paths()</a></code> </p>
-        </td>
-        <td><p>Formats the file paths of all target function calls in the active document
-using format_path()</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="format_path.html">format_path()</a></code> </p>
-        </td>
-        <td><p>Format the highlighted file path to use individual quoted and comma-separated
-elements</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>fns</th>
+      <td><p>Defines the functions to target for cleaning. Default is to clean
+the file paths of both here() and file.path(), but one or the other can be
+specified if running the command interactively (i.e. not via the AddIn).</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Updated path as recommended by here::here(), split into individual
+  quoted and comma-separated segments.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
