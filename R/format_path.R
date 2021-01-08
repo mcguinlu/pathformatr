@@ -72,7 +72,7 @@ format_all_paths <- function(fns = c("here","file.path"), message = TRUE){
 
     for (func in fns) {
       message("|- ",
-              stringr::str_count(info[["path_text"]],
+              stringr::str_count(info[["text"]],
                                  paste0(func, "\\(.+?\\)")),
               " ",
               func,

@@ -41,6 +41,8 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
+![](demo.gif)
+
 This functionality is available via the `format_path()` function, but is designed to work best via an RStudio AddIn - simply highlight your entire function call (i.e. "here(" to ")" inclusive)^[This is to prevent users (mainly me) from reformatting paths in functions that do not support separator-agnostic file paths.], browse to the `pathformatr` section in the RStudio Addins drop-down menu, and select "Split file path into quoted and comma-separated elements.".
 
 Alternatively you can [bind the functionality to a keyboard shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts) (I personally like mapping it to `CRTL+/`).
@@ -66,9 +68,6 @@ In addition, this project presented a good opportunity to explore three topics I
 
   * the RStudio interface (accessed via the `rstudioapi` package), in particular developing tests for functions that modify user-highlighted text/the active file;
   * building RStudio AddIns; and
-  * `regex` syntax, particularly around the handling of slashes ("\" and "/").
-
-## To Do
-* Make a video demonstrating the functionality.
+  * `regex` syntax, particularly around the handling of slashes ("\\" and "/").
 
 <hr>

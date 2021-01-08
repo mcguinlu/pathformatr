@@ -35,6 +35,8 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
+![](demo.gif)
+
 This functionality is available via the `format_path()` function, but is
 designed to work best via an RStudio AddIn - simply highlight your
 entire function call (i.e. “here(” to “)” inclusive)\[1\], browse to the
@@ -77,12 +79,8 @@ topics I was keen to expand my knowledge of:
     particular developing tests for functions that modify
     user-highlighted text/the active file;
   - building RStudio AddIns; and
-  - `regex` syntax, particularly around the handling of slashes (“"
-    and”/").
-
-## To Do
-
-  - Make a video demonstrating the functionality.
+  - `regex` syntax, particularly around the handling of slashes (“\\”
+    and “/”).
 
 <hr>
 
