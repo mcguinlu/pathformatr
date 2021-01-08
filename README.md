@@ -6,14 +6,24 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![R build
 status](https://github.com/mcguinlu/pathformatr/workflows/R-CMD-check/badge.svg)](https://github.com/mcguinlu/pathformatr/actions)
 <!-- badges: end -->
 
-The purpose of `pathformatr` is singular and simple - to allow you to use
-the RStudio file path auto-complete functionality and then quickly
-reformat your code to match here::here() guidelines.
+## Installation
+
+``` r
+devtools::install_github("mcguinlu/pathformatr")
+library(pathformatr)
+```
+
+## Functionality
+
+The purpose of `pathformatr` is singular and simple - to allow you to
+use the RStudio file path auto-complete functionality in `here()` and
+`file.path()` calls and then quickly reformat the resulting file path to
+use quoted, comma-separated elements:
 
 ``` r
 here::here("data/2020/06/01/data.csv")
@@ -25,39 +35,56 @@ here::here("data\2020\06\01\data.csv")
 here::here("data","2020","06","01","data.csv")
 ```
 
-The function will now also clean `file.path()` calls, so :
-
-``` r
-file.path("data/2020/06/01/data.csv")
-
-# becomes
-
-file.path("data","2020","06","01","data.csv")
-```
-
-This functionality is designed to work via an RStudio addin - simply
-highlight your file path, browse to the `pathformatr` section in the
-RStudio Addins drop-down menu, and select “Format path for use with
-here::here()”.
+This functionality is available via the `format_path()` function, but is
+designed to work best via an RStudio AddIn - simply highlight your
+entire function call (i.e. “here(” to “)” inclusive)\[1\], browse to the
+`pathformatr` section in the RStudio Addins drop-down menu, and select
+“Split file path into quoted and comma-separated elements.”.
 
 Alternatively you can [bind the functionality to a keyboard
 shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts)
 (I personally like mapping it to `CRTL+/`).
 
-## Installation
-
-You can install the development version from
-[GitHub](https://github.com/) with:
+A second helper function (`format_all_paths()`) formats all `here()` and
+`file.path()` calls in the active file, while also allowing users to
+define additional function calls to target using the `fns` argument.
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("mcguinlu/pathformatr")
-library(pathformatr)
+# Open the document in RStudio and then run the following from the console
+format_all_paths()
+
+# To only target here() calls
+format_all_paths(fns = c("here"))
+
+# To only target file.path() calls
+format_all_paths(fns = c("file.path"))
 ```
 
 ## Motivation
 
+My primary motivation for this project was to make it as easy as
+possible to use the here::here() workflow (the benefits of which are
+laid out in a [README](https://github.com/jennybc/here_here) by
+@jennybc). This package/AddIn was created to address my sole issue with
+`here()`, in that its a pain to format auto-completed file paths by
+manually going from a slash-separated string to quoted, comma-separated
+elements.
+
+In addition, this project presented a good opportunity to explore three
+topics I was keen to expand my knowledge of:
+
+  - the RStudio interface (accessed via the `rstudioapi` package), in
+    particular developing tests for functions that modify
+    user-highlighted text/the active file;
+  - building RStudio AddIns; and
+  - `regex` syntax, particularly around the handling of slashes (“"
+    and”/").
+
 ## To Do
 
   - Make a video demonstrating the functionality.
-  - Add new function to format all here::here() calls in a document
+
+<hr>
+
+1.  This is to prevent users (mainly me) from reformatting paths in
+    functions that do not support separator-agnostic file paths.

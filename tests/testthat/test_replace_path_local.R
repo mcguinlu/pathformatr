@@ -1,6 +1,7 @@
 context("Check path replacement - full (local only)")
 
 ## Can only be run interactively!
+## Spacer line
 
 #  -- Scratch Space -- #
 # here::here("inst/rstudio/test.csv")
@@ -10,8 +11,6 @@ context("Check path replacement - full (local only)")
 # file.path("inst\rstudio\test.csv")
 # file.path("inst","rstudio","test.csv")
 #  -- Scratch Space -- #
-
-# test("inst\rstudio\test.csv")
 
 test_that("various APIs for interacting with an RStudio document work", {
   # Skip unless interactive

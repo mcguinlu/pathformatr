@@ -1,17 +1,19 @@
 Package: pathformatr
 Type: Package
-Title: Format traditional file paths for use with here::here()
+Title: Format File Paths To Be Platform-Independent
 Version: 0.1.0.900
 Authors@R: c( 
     person("Luke", "McGuinness",
            role = c("aut", "cre"),
            email = "luke.mcguinness@bristol.ac.uk"))
-Description: This function formats a file path highlighted in the source pane
-    to work with here::here() by separating the string into its component
-    parts, and then quoting and comma-separating these elements. This 
-    functionality is  useful as it allows for users to autocomplete paths 
-    using the RStudio auto-complete functionality, and then rapdily reformat the
-    resulting path for use with the here package. 
+Description: This package allows users to easily (re-)format standard file paths
+    in here::here() or file.path() function calls to be platform-independent by 
+    separating the file path string into its component parts and then quoting 
+    and comma-separating each elements. This is particularly useful as it allows
+    for users to complete file paths using RStudio's built-in auto-complete 
+    functionality, and then rapidly reformat the resulting path for use with 
+    here::here() or file.path(). For ease of use, an RStudio AddIn allows for 
+    the functionality to be mapped to a keyboard shortcut.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
