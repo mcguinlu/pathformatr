@@ -127,11 +127,12 @@ split_path <- function(text, fns = c("here","file.path")){
         stringr::str_extract_all(paste0(func,"\\(.+?\\)")) %>%
         unlist() %>%
         # Replace forward slashes
-        stringr::str_replace_all("/", "\",\"") %>%
+        stringr::str_replace_all("/", "\", \"") %>%
         # Replace back slashes
-        stringr::str_replace_all("\\\\", "\",\"") %>%
+        # Replace back slashes
+        stringr::str_replace_all("\\\\", "\", \"") %>%
         # Replace empty commas ("") created by leading or trailing slashes
-        stringr::str_replace_all(",\"\"","")
+        stringr::str_replace_all(", \"\"","")
     }
 
     text <-

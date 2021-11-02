@@ -38,7 +38,7 @@ here::here("data\2020\06\01\data.csv")
 
 # becomes
 
-here::here("data","2020","06","01","data.csv")
+here::here("data", "2020", "06", "01", "data.csv")
 ```
 
 ![](demo.gif)

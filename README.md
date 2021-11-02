@@ -32,14 +32,14 @@ here::here("data\2020\06\01\data.csv")
 
 # becomes
 
-here::here("data","2020","06","01","data.csv")
+here::here("data", "2020", "06", "01", "data.csv")
 ```
 
 ![](demo.gif)
 
 This functionality is available via the `format_path()` function, but is
 designed to work best via an RStudio AddIn - simply highlight your
-entire function call (i.e. “here(” to “)” inclusive)\[1\], browse to the
+entire function call (i.e. “here(” to “)” inclusive)[1], browse to the
 `pathformatr` section in the RStudio Addins drop-down menu, and select
 “Split file path into quoted and comma-separated elements.”.
 
@@ -75,14 +75,14 @@ elements.
 In addition, this project presented a good opportunity to explore three
 topics I was keen to expand my knowledge of:
 
-  - the RStudio interface (accessed via the `rstudioapi` package), in
+-   the RStudio interface (accessed via the `rstudioapi` package), in
     particular developing tests for functions that modify
     user-highlighted text/the active file;
-  - building RStudio AddIns; and
-  - `regex` syntax, particularly around the handling of slashes (“\\”
+-   building RStudio AddIns; and
+-   `regex` syntax, particularly around the handling of slashes (“\\”
     and “/”).
 
 <hr>
 
-1.  This is to prevent users (mainly me) from reformatting paths in
-    functions that do not support separator-agnostic file paths.
+[1] This is to prevent users (mainly me) from reformatting paths in
+functions that do not support separator-agnostic file paths.
