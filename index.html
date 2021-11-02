@@ -98,9 +98,9 @@
 <span id="cb2-4"><a href="#cb2-4"></a></span>
 <span id="cb2-5"><a href="#cb2-5"></a><span class="co"># becomes</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data"</span>,<span class="st">"2020"</span>,<span class="st">"06"</span>,<span class="st">"01"</span>,<span class="st">"data.csv"</span>)</span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data"</span>, <span class="st">"2020"</span>, <span class="st">"06"</span>, <span class="st">"01"</span>, <span class="st">"data.csv"</span>)</span></code></pre></div>
 <p><img src="demo.gif"></p>
-<p>This functionality is available via the <code><a href="reference/format_path.html">format_path()</a></code> function, but is designed to work best via an RStudio AddIn - simply highlight your entire function call (i.e. “here(” to “)” inclusive)<br><span class="math display">1</span><br>, browse to the <code>pathformatr</code> section in the RStudio Addins drop-down menu, and select “Split file path into quoted and comma-separated elements.”.</p>
+<p>This functionality is available via the <code><a href="reference/format_path.html">format_path()</a></code> function, but is designed to work best via an RStudio AddIn - simply highlight your entire function call (i.e. “here(” to “)” inclusive)[1], browse to the <code>pathformatr</code> section in the RStudio Addins drop-down menu, and select “Split file path into quoted and comma-separated elements.”.</p>
 <p>Alternatively you can <a href="https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts">bind the functionality to a keyboard shortcut</a> (I personally like mapping it to <code>CRTL+/</code>).</p>
 <p>A second helper function (<code><a href="reference/format_all_paths.html">format_all_paths()</a></code>) formats all <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls in the active file, while also allowing users to define additional function calls to target using the <code>fns</code> argument.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -125,9 +125,7 @@
 <code>regex</code> syntax, particularly around the handling of slashes (“\” and “/”).</li>
 </ul>
 <hr>
-<ol>
-<li>This is to prevent users (mainly me) from reformatting paths in functions that do not support separator-agnostic file paths.</li>
-</ol>
+<p>[1] This is to prevent users (mainly me) from reformatting paths in functions that do not support separator-agnostic file paths.</p>
 </div>
 </div>
   </div>
