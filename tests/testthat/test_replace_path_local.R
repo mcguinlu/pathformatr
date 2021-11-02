@@ -6,10 +6,10 @@ context("Check path replacement - full (local only)")
 #  -- Scratch Space -- #
 # here::here("inst/rstudio/test.csv")
 # here::here("inst\rstudio\test.csv")
-# here::here("inst","rstudio","test.csv")
+# here::here("inst", "rstudio", "test.csv")
 # file.path("inst/rstudio/test.csv")
 # file.path("inst\rstudio\test.csv")
-# file.path("inst","rstudio","test.csv")
+# file.path("inst", "rstudio", "test.csv")
 #  -- Scratch Space -- #
 
 test_that("various APIs for interacting with an RStudio document work", {
