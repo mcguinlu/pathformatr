@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">pathformatr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.900</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.900</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/mcguinlu/pathformatr/">
+  <a href="https://github.com/mcguinlu/pathformatr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -76,22 +72,21 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="pathformatr" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#pathformatr" class="anchor"></a>pathformatr</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="pathformatr">pathformatr<a class="anchor" aria-label="anchor" href="#pathformatr"></a>
+</h1></div>
 <!-- badges: start -->
-
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mcguinlu/pathformatr"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mcguinlu/pathformatr">pathformatr</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mcguinlu/pathformatr"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mcguinlu/pathformatr" class="external-link">pathformatr</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="functionality" class="section level2">
-<h2 class="hasAnchor">
-<a href="#functionality" class="anchor"></a>Functionality</h2>
-<p>The purpose of <code>pathformatr</code> is singular and simple - to allow you to use the RStudio file path auto-complete functionality in <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls and then quickly reformat the resulting file path to use quoted, comma-separated elements:</p>
+<div class="section level2">
+<h2 id="functionality">Functionality<a class="anchor" aria-label="anchor" href="#functionality"></a>
+</h2>
+<p>The purpose of <code>pathformatr</code> is singular and simple - to allow you to use the RStudio file path auto-complete functionality in <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path()</a></code> calls and then quickly reformat the resulting file path to use quoted, comma-separated elements:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data/2020/06/01/data.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="co"># or</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data\2020</span><span class="ch">\06\01</span><span class="st">\data.csv"</span>)</span>
@@ -101,22 +96,22 @@
 <span id="cb2-7"><a href="#cb2-7"></a>here<span class="op">::</span><span class="kw">here</span>(<span class="st">"data"</span>, <span class="st">"2020"</span>, <span class="st">"06"</span>, <span class="st">"01"</span>, <span class="st">"data.csv"</span>)</span></code></pre></div>
 <p><img src="demo.gif"></p>
 <p>This functionality is available via the <code><a href="reference/format_path.html">format_path()</a></code> function, but is designed to work best via an RStudio AddIn - simply highlight your entire function call (i.e. “here(” to “)” inclusive)[1], browse to the <code>pathformatr</code> section in the RStudio Addins drop-down menu, and select “Split file path into quoted and comma-separated elements.”.</p>
-<p>Alternatively you can <a href="https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts">bind the functionality to a keyboard shortcut</a> (I personally like mapping it to <code>CRTL+/</code>).</p>
-<p>A second helper function (<code><a href="reference/format_all_paths.html">format_all_paths()</a></code>) formats all <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html">file.path()</a></code> calls in the active file, while also allowing users to define additional function calls to target using the <code>fns</code> argument.</p>
+<p>Alternatively you can <a href="https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts" class="external-link">bind the functionality to a keyboard shortcut</a> (I personally like mapping it to <code>CRTL+/</code>).</p>
+<p>A second helper function (<code><a href="reference/format_all_paths.html">format_all_paths()</a></code>) formats all <code>here()</code> and <code><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path()</a></code> calls in the active file, while also allowing users to define additional function calls to target using the <code>fns</code> argument.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Open the document in RStudio and then run the following from the console</span>
-<span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># To only target here() calls</span>
-<span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span>fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"here"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># To only target file.path() calls</span>
-<span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span>fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"file.path"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Open the document in RStudio and then run the following from the console</span></span>
+<span><span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># To only target here() calls</span></span>
+<span><span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span>fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"here"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># To only target file.path() calls</span></span>
+<span><span class="fu"><a href="reference/format_all_paths.html">format_all_paths</a></span><span class="op">(</span>fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"file.path"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="motivation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>My primary motivation for this project was to make it as easy as possible to use the here::here() workflow (the benefits of which are laid out in a <a href="https://github.com/jennybc/here_here">README</a> by @jennybc). This package/AddIn was created to address my sole issue with <code>here()</code>, in that its a pain to format auto-completed file paths by manually going from a slash-separated string to quoted, comma-separated elements.</p>
+<div class="section level2">
+<h2 id="motivation">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
+<p>My primary motivation for this project was to make it as easy as possible to use the here::here() workflow (the benefits of which are laid out in a <a href="https://github.com/jennybc/here_here" class="external-link">README</a> by @jennybc). This package/AddIn was created to address my sole issue with <code>here()</code>, in that its a pain to format auto-completed file paths by manually going from a slash-separated string to quoted, comma-separated elements.</p>
 <p>In addition, this project presented a good opportunity to explore three topics I was keen to expand my knowledge of:</p>
 <ul>
 <li>the RStudio interface (accessed via the <code>rstudioapi</code> package), in particular developing tests for functions that modify user-highlighted text/the active file;</li>
@@ -132,45 +127,56 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/mcguinlu/pathformatr/">https://​github.com/​mcguinlu/​pathformatr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/mcguinlu/pathformatr/issues">https://​github.com/​mcguinlu/​pathformatr/​issues</a>
-</li>
+<li><a href="https://github.com/mcguinlu/pathformatr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/mcguinlu/pathformatr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing pathformatr</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Luke McGuinness <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/mcguinlu/pathformatr/actions"><img src="https://github.com/mcguinlu/pathformatr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://github.com/mcguinlu/pathformatr/actions" class="external-link"><img src="https://github.com/mcguinlu/pathformatr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Luke McGuinness.</p>
+  <p></p>
+<p>Developed by Luke McGuinness.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -178,6 +184,8 @@
 
   
 
+
+  
 
   </body>
 </html>
