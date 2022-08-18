@@ -31,7 +31,7 @@ library(pathformatr)
 
 The purpose of `pathformatr` is singular and simple - to allow you to use the RStudio file path auto-complete functionality in `here()` and `file.path()` calls and then quickly reformat the resulting file path to use quoted, comma-separated elements:
 
-``` {r, eval = FALSE}
+``` {r, eval = FALSE} 
 here::here("data/2020/06/01/data.csv")
 # or
 here::here("data\2020\06\01\data.csv")
